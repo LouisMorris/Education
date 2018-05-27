@@ -12,6 +12,8 @@ void Remittance();  //송금
 
 */
 
+void remittance(int n);
+
 class BANK {
 public:
     BANK() { money = 0;}
@@ -46,11 +48,11 @@ public:
             }
         }
     }
-    void remittanceFunc(int n)
+    int remittanceFunc(int n)
     {
         int remittance;
-        std::cout<<"송금할 금액을 입력하시오."
-        std::cin>>remittance>>std::endl;
+        std::cout<<"송금할 금액을 입력하시오.";
+        std::cin>>remittance;
         if(remittance>money)
         {
             return 0;
@@ -61,7 +63,10 @@ public:
 
     std::string getName() { return name; }
     std::string getPassword() { return passward; }
-    int getmoney(){return money;}
+    int getmoney() { return money; }
+    void setMoney(int n) {
+        money = n;
+    }
 private:
 
     std::string name;

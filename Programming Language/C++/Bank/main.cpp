@@ -2,9 +2,9 @@
 
 int checkAccount();
 
-int main() {
+BANK atm[2];
 
-    BANK atm[2];
+int main() {
     while(1)
     {
         int id_idx = checkAccount();
@@ -30,8 +30,6 @@ int main() {
     return 0;
 }
 
- 
-
 int checkAccount() {
     std::string name, password;
     std::cout << "Input the account name" << std::endl;
@@ -56,18 +54,20 @@ void remittance(int n)
     std::string name;
     std::cout<<"상대의 아이디를 입력하시오.";
     std::cin>>name;
-    int num = atm[n].remittanceFunc()
+
+    int num = atm[n].remittanceFunc(n);
+
     for(int i=0;i<2;i++)
     {
-        if(atm[i].getname==name)
+        if(atm[i].getName()==name)
         {
             if(num==0)
             {
-                return 0;
+                return;
             }
-            atm[i].getmoney()=atm[i].getmoney-num;
+            atm[i].setMoney(atm[i].getmoney()-num);
             std::cout<<"송금이 완료되었습니다."<<std::endl;
-            std::cout<<"현제 잔액 "<<atm[n].getmoney<<"원입니다. "<<std::endl<<"송금 금액 "<<num<<"원 입니다."<<std::endl;
+            std::cout<<"현제 잔액 "<<atm[n].getmoney() << "원입니다. " <<std::endl<<"송금 금액 "<<num<<"원 입니다."<<std::endl;
         }
  
     }
