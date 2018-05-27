@@ -76,6 +76,10 @@ void remittance(int n)
 // TODO.
 // djsflsajdlfjsdlfjalsdjflasdjfkljasdlkf
 // sfslkfs;dkf;sdkf;skd;flks;lfks;lfk;sadsdfasffsd
+// skflsdkf;sakdf;skdf;skad;fksad;fksad;lfs
+// sdlkflsadkf;lskfsd4444
+
+
 
 /*
 int main() 
