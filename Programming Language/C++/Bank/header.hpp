@@ -1,17 +1,18 @@
 #pragma once
 #include <iostream>
 #include <string>
- 
+#include <vector>
 /*
 
-int ID(std::string);         //ì•„ì´ë”” ì¤‘ë³µí™•ì¸
+int ID(std::string);         //?•„?´?”” ì¤‘ë³µ?™•?¸
 
-void Passward();   //ë¹„ë°€ë²ˆí˜¸ ì¤‘ë³µí™•ì¸
+void Passward();   //ë¹„ë??ë²ˆí˜¸ ì¤‘ë³µ?™•?¸
 
-void Remittance();  //ì†¡ê¸ˆ
+void Remittance();  //?†¡ê¸?
 
 */
-
+void login();
+int checkAccount(std::string name, std::string password);
 void remittance(int n);
 
 class BANK {
@@ -51,7 +52,7 @@ public:
     int remittanceFunc(int n)
     {
         int remittance;
-        std::cout<<"ì†¡ê¸ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì‹œì˜¤.";
+        std::cout<<"?†¡ê¸ˆí•  ê¸ˆì•¡?„ ?…? ¥?•˜?‹œ?˜¤.";
         std::cin>>remittance;
         if(remittance>money)
         {
@@ -61,18 +62,36 @@ public:
         return remittance;
     }
 
+    void newAccount() {
+        std::cout << "New ID : ";
+        std::cin >> name;
+        std::cout << "New PWD : ";
+        std::cin >> passward;
+
+        std::cout << "//////////////////////////////" << std::endl;
+        std::cout << "// ID : " << name << std::endl;
+        std::cout << "// PWD : " << passward << std::endl;
+        std::cout << "//////////////////////////////" << std::endl;
+    }   
+    
     std::string getName() { return name; }
     std::string getPassword() { return passward; }
     int getmoney() { return money; }
     void setMoney(int n) {
         money = n;
     }
+
+    void setClientIndex(int i) {
+        client_idx = i;
+    }
+
+    int getClinetIndex() {
+        return 0; 
+    }
+
 private:
-
     std::string name;
-
     std::string passward;
-
     int money;
-
+    int client_idx;
 };
