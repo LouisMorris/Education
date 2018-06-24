@@ -11,7 +11,7 @@ void Passward();   //ë¹„ë??ë²ˆí˜¸ ì¤‘ë³µ?™•?¸
 void Remittance();  //?†¡ê¸?
 
 */
-void login();
+int login();
 int checkAccount(std::string name, std::string password);
 void remittance(int n);
 
@@ -49,7 +49,11 @@ public:
             }
         }
     }
-    int remittanceFunc(int n)
+    void addmoney(int n)
+    {
+        money=money+n;
+    }
+    int remittanceFunc()
     {
         int remittance;
         std::cout<<"?†¡ê¸ˆí•  ê¸ˆì•¡?„ ?…? ¥?•˜?‹œ?˜¤.";
